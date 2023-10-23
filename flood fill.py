@@ -29,8 +29,8 @@ def flood_fill(input_board: List[str], old: str, new: str, x: int, y: int) -> Li
     # print(input_board[x])
     # print(type(input_board[x]))
     # print(input_board[x][y])
-    m = len(input_board)
-    n = len(input_board[0])
+    m = len(input_board) # m is the row number of the board
+    n = len(input_board[0]) # n is the column number of the board
 
     if x >= 0 and x < m and y >= 0 and y < n:
         if input_board[x][y] == old:
@@ -58,3 +58,29 @@ for a in modified_board:
 # ....###~~~~~~~~~~~~#..
 # ....#~~~~~~~~~~~~###..
 # ....##############....
+
+board = [
+    "......................",
+    "......##########......",
+    "......#........#......",
+    "......#........#......",
+    "......#........#####..",
+    "....###...............",
+    "....#............###..",
+    "....##############....",
+]
+
+modified_board = flood_fill(input_board=board, old=".", new="~", x=5, y=12)
+
+for a in modified_board:
+    print(a)
+
+# Expected output:
+# ~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~##########~~~~~~
+# ~~~~~~#~~~~~~~~#~~~~~~
+# ~~~~~~#~~~~~~~~#~~~~~~
+# ~~~~~~#~~~~~~~~#####~~
+# ~~~~###~~~~~~~~~~~~~~~
+# ~~~~#~~~~~~~~~~~~###~~
+# ~~~~##############~~~~
